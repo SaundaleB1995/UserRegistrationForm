@@ -21,3 +21,16 @@ function checkName(){
         checkName
 
 
+        echo "Enter User Email:"
+        read email
+
+        emailPat="^([a-zA-Z]{3,}([.|_|+|-]?[a-zA-Z0-9]+)?[@][a-zA-Z0-9]+[.][a-zA-Z]{2,3}([.]?[a-zA-Z]{2,3})?)$"
+
+        if [[ $email =~ $emailPat ]]
+        then
+                echo CORRECT;
+        else
+                echo FAIL;
+        fi
+
+

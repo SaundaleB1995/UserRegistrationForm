@@ -1,36 +1,42 @@
 #!/bin/bash
-	echo "Welcome to User Registration Form."
+        echo "Welcome to User Registration Form."
 
         shopt -s extglob
-   echo "Enter User First Name:"
-   read name
+                function  checkForValid(){
+                        userInput=$1
+                        pattern=$2
+                   if [[ $userInput =~ $pattern ]]
+                    then
+                        echo CORRECT
+                    else
+                        echo FAIL
+                    fi
+                }
 
 
-   namePat="^[A-Z]{1}[a-z]{3,}$"
-function checkName(){
-        if [[ $name =~ $namePat ]]
-        then
-                echo CORRECT;
-        else
-                echo FAIL;
-        fi
-}
-        checkName
-   echo "Enter User Last Name:"
-   read  name
-        checkName
 
+           echo "Enter User First Name:"
+            read firstName
+                namePat="^[A-Z]{1}[a-z]{3,}$"
+                checkForValid "$firstName" $namePat
+
+
+        echo "Enter User Last Name:"
+        read lastName
+        namePat="^[A-Z]{1}[a-z]{3,}$"
+        checkForValid "$lastName" $namePat
 
         echo "Enter User Email:"
         read email
 
         emailPat="^([a-zA-Z]{3,}([.|_|+|-]?[a-zA-Z0-9]+)?[@][a-zA-Z0-9]+[.][a-zA-Z]{2,3}([.]?[a-zA-Z]{2,3})?)$"
 
-        if [[ $email =~ $emailPat ]]
-        then
-                echo CORRECT;
-        else
-                echo FAIL;
-        fi
+        checkForValid "$email" $emailPat
+
+          echo "Enter User Valid Mobile Number:"
+           read mobile
+
+        mobilePat="^[0-9]{1,3}[[:space:]][0-9]{10}$"
+        checkForValid "$mobile" $mobilePat
 
 

@@ -45,3 +45,4 @@
        passwordPat="^A-Z[:upper:]a-zA-Z0-9]{8,}"
 	checkForValid "$pwd" $passwordPat
 
+     

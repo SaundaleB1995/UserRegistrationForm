@@ -42,7 +42,7 @@
 	   echo "Enter User Password:"
 	   read pwd
 
-       passwordPat="^A-Z[:upper:][a-zA-Z0-9]{8,}"
+       passwordPat="^[a-zA-Z0-9\.|_|-|#|@|*|+]{8}$"
 	checkForValid "$pwd" $passwordPat
 
-            
+

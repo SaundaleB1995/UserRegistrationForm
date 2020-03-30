@@ -39,3 +39,11 @@
    	mobilePat="^[0-9]{1,3}[[:space:]][0-9]{10}$"
 	checkForValid "$mobile" $mobilePat
 
+	   echo "Enter User Password:"
+	   read pwd
+
+       passwordPat="^[a-zA-Z0-9]{8,}"
+       # passwordPat="^(/[a-zA-Z]+/ && /[^a-zA-Z]+/ && !/[0-9a-zA-Z]{3,}/)"
+
+		#passwordPat="^(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z]{3,})\w{6,13}$"
+	checkForValid "$pwd" $passwordPat
